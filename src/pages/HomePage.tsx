@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { 
-  Globe, 
-  Shield, 
-  MapPin, 
-  Clock, 
+import {
+  Globe,
+  Shield,
+  MapPin,
+  Clock,
   ChevronRight,
   Star,
   Quote,
@@ -22,44 +22,44 @@ const HomePage = () => {
   const processRef = useRef<HTMLDivElement>(null)
   const testimonialsRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
-  
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Hero animations
-      gsap.fromTo('.hero-headline', 
+      gsap.fromTo('.hero-headline',
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out', delay: 0.3 }
       )
-      
+
       gsap.fromTo('.hero-subheadline',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.8 }
       )
-      
+
       gsap.fromTo('.hero-cta',
         { opacity: 0, scale: 0.9 },
         { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)', delay: 1 }
       )
-      
+
       gsap.fromTo('.hero-image',
         { opacity: 0, x: 100, rotateY: 5 },
         { opacity: 1, x: 0, rotateY: 0, duration: 1, ease: 'power3.out', delay: 0.4 }
       )
-      
+
       gsap.fromTo('.hero-stat',
         { opacity: 0, scale: 0 },
         { opacity: 1, scale: 1, duration: 0.5, stagger: 0.15, ease: 'back.out(2)', delay: 1.2 }
       )
-      
+
       // Features section animations
       gsap.fromTo('.feature-card',
         { opacity: 0, x: -50, rotate: -5 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          rotate: 0, 
-          duration: 0.6, 
-          stagger: 0.12, 
+        {
+          opacity: 1,
+          x: 0,
+          rotate: 0,
+          duration: 0.6,
+          stagger: 0.12,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: featuresRef.current,
@@ -68,14 +68,14 @@ const HomePage = () => {
           }
         }
       )
-      
+
       gsap.fromTo('.feature-image',
         { opacity: 0, x: 50, scale: 1.1 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          scale: 1, 
-          duration: 1, 
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 1,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: featuresRef.current,
@@ -84,16 +84,16 @@ const HomePage = () => {
           }
         }
       )
-      
+
       // Services section animations
       gsap.fromTo('.service-card',
         { opacity: 0, y: 40, scale: 0.95 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          scale: 1, 
-          duration: 0.5, 
-          stagger: 0.1, 
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.1,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: servicesRef.current,
@@ -102,33 +102,33 @@ const HomePage = () => {
           }
         }
       )
-      
+
       // Process section animations
       gsap.fromTo('.process-step',
         { opacity: 0, x: -30 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          duration: 0.6, 
-          stagger: 0.15, 
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          stagger: 0.15,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: processRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            toggleActions: 'play none none none'
           }
         }
       )
-      
+
       // Testimonials animations
       gsap.fromTo('.testimonial-card',
         { opacity: 0, y: 30, rotateY: -15 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          rotateY: 0, 
-          duration: 0.7, 
-          stagger: 0.15, 
+        {
+          opacity: 1,
+          y: 0,
+          rotateY: 0,
+          duration: 0.7,
+          stagger: 0.15,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: testimonialsRef.current,
@@ -137,14 +137,14 @@ const HomePage = () => {
           }
         }
       )
-      
+
       // CTA animations
       gsap.fromTo('.cta-content',
         { opacity: 0, x: -50 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          duration: 0.8, 
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: ctaRef.current,
@@ -153,14 +153,14 @@ const HomePage = () => {
           }
         }
       )
-      
+
       gsap.fromTo('.cta-image',
         { opacity: 0, x: 50, scale: 1.1 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          scale: 1, 
-          duration: 1, 
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 1,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: ctaRef.current,
@@ -170,10 +170,10 @@ const HomePage = () => {
         }
       )
     })
-    
+
     return () => ctx.revert()
   }, [])
-  
+
   const features = [
     {
       icon: Globe,
@@ -191,7 +191,7 @@ const HomePage = () => {
       description: 'Know where your vehicle is, at every moment.'
     }
   ]
-  
+
   const services = [
     {
       title: 'Open Transport',
@@ -219,7 +219,7 @@ const HomePage = () => {
       image: '/images/about-hero.jpg'
     }
   ]
-  
+
   const processSteps = [
     {
       number: '01',
@@ -242,7 +242,7 @@ const HomePage = () => {
       description: 'Receive your vehicle in pristine condition, hassle-free.'
     }
   ]
-  
+
   const testimonials = [
     {
       quote: "Exceptional service from start to finish. My classic Mercedes arrived in perfect condition. The attention to detail and communication throughout the process was outstanding.",
@@ -266,14 +266,14 @@ const HomePage = () => {
       rating: 5
     }
   ]
-  
+
   return (
     <div className="bg-black">
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-polaron-crimson/20" />
-        
+
         {/* Particle Effect Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 opacity-30">
@@ -291,7 +291,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
@@ -307,11 +307,11 @@ const HomePage = () => {
                   <span className="text-polaron-crimson">Journey</span>
                 </h1>
               </div>
-              
+
               <p className="hero-subheadline text-lg text-white/70 max-w-lg mb-8 leading-relaxed">
                 Premium transport solutions trusted across 80+ countries. Your Mercedes-Benz deserves the precision and care that only Polaron provides.
               </p>
-              
+
               <div className="hero-cta flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/quote"
@@ -327,7 +327,7 @@ const HomePage = () => {
                   Explore Services
                 </Link>
               </div>
-              
+
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mt-12">
                 <div className="hero-stat">
@@ -344,7 +344,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Hero Image */}
             <div className="order-1 lg:order-2 relative">
               <div className="hero-image relative">
@@ -355,7 +355,7 @@ const HomePage = () => {
                   className="relative w-full h-auto rounded-lg shadow-2xl"
                 />
               </div>
-              
+
               {/* Floating Stats Cards */}
               <div className="absolute -bottom-4 -left-4 bg-black/80 backdrop-blur-xl border border-white/10 rounded-lg p-4 animate-float">
                 <div className="flex items-center gap-3">
@@ -368,7 +368,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="absolute -top-4 -right-4 bg-black/80 backdrop-blur-xl border border-white/10 rounded-lg p-4 animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-polaron-crimson/20 rounded-full flex items-center justify-center">
@@ -384,7 +384,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Features Section */}
       <section ref={featuresRef} className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -402,10 +402,10 @@ const HomePage = () => {
                   We treat every vehicle as an investment asset, not cargo. Precision, protection, and peace of mind.
                 </p>
               </div>
-              
+
               <div className="space-y-6">
                 {features.map((feature, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="feature-card group flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-polaron-crimson/30 transition-all duration-300"
                   >
@@ -420,7 +420,7 @@ const HomePage = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Image */}
             <div className="feature-image relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-polaron-crimson/20 to-transparent blur-3xl rounded-full transform scale-75" />
@@ -433,7 +433,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Services Section */}
       <section ref={servicesRef} className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -448,14 +448,13 @@ const HomePage = () => {
               From standard transport to white-glove enclosed shipping, we offer solutions for every need.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`service-card group relative overflow-hidden rounded-xl bg-white/5 border border-white/10 hover:border-polaron-crimson/30 transition-all duration-500 ${
-                  index === 1 ? 'lg:scale-105 lg:z-10' : ''
-                }`}
+                className={`service-card group relative overflow-hidden rounded-xl bg-white/5 border border-white/10 hover:border-polaron-crimson/30 transition-all duration-500 ${index === 1 ? 'lg:scale-105 lg:z-10' : ''
+                  }`}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -475,7 +474,7 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link
               to="/services"
@@ -487,7 +486,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Process Section */}
       <section ref={processRef} className="py-24 relative overflow-hidden bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -502,7 +501,7 @@ const HomePage = () => {
               Four simple steps to secure, professional vehicle transport.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="process-step relative">
@@ -510,11 +509,11 @@ const HomePage = () => {
                 <div className="w-16 h-16 rounded-full bg-polaron-crimson/20 border border-polaron-crimson/30 flex items-center justify-center mb-6">
                   <span className="text-2xl font-bold text-polaron-crimson">{step.number}</span>
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
-                
+
                 {/* Connector Line */}
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5">
@@ -526,7 +525,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Stats Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -550,7 +549,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section ref={testimonialsRef} className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -565,7 +564,7 @@ const HomePage = () => {
               Trusted by vehicle owners and collectors worldwide.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
@@ -576,19 +575,19 @@ const HomePage = () => {
                 <div className="absolute -top-4 -left-2">
                   <Quote size={40} className="text-polaron-crimson/30" />
                 </div>
-                
+
                 {/* Rating */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={16} className="text-polaron-crimson fill-polaron-crimson" />
                   ))}
                 </div>
-                
+
                 {/* Quote */}
                 <p className="text-white/80 text-sm leading-relaxed mb-8">
                   "{testimonial.quote}"
                 </p>
-                
+
                 {/* Author */}
                 <div className="flex items-center gap-4">
                   <img
@@ -606,7 +605,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section ref={ctaRef} className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -618,7 +617,7 @@ const HomePage = () => {
                 backgroundSize: '30px 30px'
               }} />
             </div>
-            
+
             <div className="relative grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
               {/* Content */}
               <div className="cta-content">
@@ -644,7 +643,7 @@ const HomePage = () => {
                   </Link>
                 </div>
               </div>
-              
+
               {/* Image */}
               <div className="cta-image hidden lg:block relative">
                 <div className="absolute inset-0 bg-polaron-crimson/20 blur-3xl rounded-full transform scale-75" />
